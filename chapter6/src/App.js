@@ -2,6 +2,7 @@ import "./App.css";
 import { useState } from "react";
 import Controller from "./component/Controller";
 import Viewer from "./component/Viewer";
+import Even from "./component/Even";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -13,6 +14,7 @@ function App() {
       <h1>Simple Counter</h1>
       <section>
         <Viewer count={count} />
+        {count % 2 === 0 && <Even />}
       </section>
       <section>
         <Controller handleSetCount={handleSetCount} />
